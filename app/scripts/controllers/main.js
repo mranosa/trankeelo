@@ -6,4 +6,10 @@ trankeeloApp.controller('MainCtrl', function($scope) {
     'AngularJS',
     'Testacular'
   ];
+
+  $('.hero-page').cycle({ 
+	    fx:     'scrollDown', 
+	    easing: 'easeOutBounce', 
+	    delay:  -1000 
+	});
 });
