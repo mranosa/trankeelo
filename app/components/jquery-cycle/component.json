@@ -1,0 +1,9 @@
+{
+  "name": "jquery-cycle",
+  "version": "0.0.0",
+  "commit": "1d11afa52a083ee0742e12c5bc7a64a3ccae636a",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/malsup/cycle.git"
+  }
+}
