@@ -10,6 +10,6 @@ trankeeloApp.controller('MainCtrl', function($scope) {
   $('.hero-page').cycle({ 
 	    fx:     'scrollDown', 
 	    easing: 'easeOutBounce', 
-	    delay:  -1000 
+	    delay:  -2000 
 	});
 });
