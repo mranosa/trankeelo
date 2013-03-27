@@ -6,8 +6,10 @@ trankeeloApp.factory('UsersCountService', function() {
 
 	var UsersCountService = function() {
 
+		myCounter = new flipCounter('flip-counter');
+
 		totalUsersRef.once('value', function(snapshot) {
-			myCounter = new flipCounter('flip-counter', {value: snapshot.val()});
+			myCounter.setValue(snapshot.val());
 		});
 
 		totalUsersRef.on('value', function(snapshot) {
