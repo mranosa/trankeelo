@@ -7,26 +7,23 @@ trankeeloApp.factory('AuthService', function() {
 	var authClient = undefined;
 
 	var AuthService = function() {
-		
+		authClient = new FirebaseAuthClient(trankeeloRef, function(error, user) {
+			if (!error && user) {
+				console.log(user);
+				var currentUserRef = new Firebase(USERS_URL + '/' + user.id);
+				currentUserRef.once('value', function(data) {
+					if(!data.val()){
+						currentUserRef.update(user);
+						totalUsersRef.transaction(function(current_value) {
+						  return current_value + 1;
+						});
+					}
+				});
+			}
+		});
 	};
 
 	AuthService.prototype = {
-		init: function(){
-			authClient = new FirebaseAuthClient(trankeeloRef, function(error, user) {
-				if (!error && user) {
-					console.log(user);
-					var currentUserRef = new Firebase(USERS_URL + '/' + user.id);
-					currentUserRef.once('value', function(data) {
-						if(!data.val()){
-							currentUserRef.update(user);
-							totalUsersRef.transaction(function(current_value) {
-							  return current_value + 1;
-							});
-						}
-					});
-				}
-			});
-		},
 		login: function(){
 			authClient.login('facebook');
 		}
