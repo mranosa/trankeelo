@@ -1,15 +1,25 @@
 'use strict';
 
 trankeeloApp.factory('UsersCountService', function() {
-  // Service logic
-  // ...
+	var totalUsersRef = new Firebase('https://trankeelo.firebaseIO.com/metrics/total_users');
+	var myCounter = undefined;
 
-  var meaningOfLife = 42;
+	var UsersCountService = function() {
 
-  // Public API here
-  return {
-    someMethod: function() {
-      return meaningOfLife;
-    }
-  };
+		totalUsersRef.once('value', function(snapshot) {
+			myCounter = new flipCounter('flip-counter', {value: snapshot.val()});
+		});
+
+		totalUsersRef.on('value', function(snapshot) {
+			myCounter.incrementTo(snapshot.val());
+		});
+	};
+
+	UsersCountService.prototype = {
+		// init: function(){
+			
+		// }
+	}
+
+	return new UsersCountService();
 });
