@@ -2,6 +2,8 @@
 
 trankeeloApp.controller('MainCtrl', function($scope, AuthService) {
 
+  AuthService.init();
+  
   $scope.signIn = function(){
     AuthService.login();
   };
@@ -12,6 +14,6 @@ trankeeloApp.controller('MainCtrl', function($scope, AuthService) {
     delay:  -2000 
   });
 
-  AuthService.init();
+  
 
 });
