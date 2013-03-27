@@ -1,6 +1,7 @@
 'use strict';
 
-trankeeloApp.controller('MainCtrl', function($scope, AuthService, UsersCountService) {
+trankeeloApp.controller('MainCtrl', ['$scope', 'AuthService', 'UsersCountService',
+  function($scope, AuthService, UsersCountService) {
 
   $scope.signIn = function(){
     AuthService.login();
@@ -12,6 +13,4 @@ trankeeloApp.controller('MainCtrl', function($scope, AuthService, UsersCountServ
     delay:  -2000 
   });
 
-  
-
-});
+}]);
