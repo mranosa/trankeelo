@@ -1,9 +1,9 @@
 'use strict';
 
-trankeeloApp.controller('MainCtrl', function($scope, AuthService) {
+trankeeloApp.controller('MainCtrl', function($scope, AuthService, UsersCountService) {
 
   AuthService.init();
-  
+
   $scope.signIn = function(){
     AuthService.login();
   };
