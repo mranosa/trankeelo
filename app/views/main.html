@@ -47,18 +47,15 @@
         </div>
 
         <div class="span4" style="border: 1px solid red;">
-          <div id="flip-counter" class="flip-counter"></div><br>
-                <h3>Current Users Count</h3>
-            <div>
-                
-            </div>
-
-            <br><br><a class="btn btn-block btn-large btn-primary" ng-click="signIn()">Sign in with Facebook</a>
+          <div id="flip-counter" class="flip-counter span12"></div>
+          <h3>Current Users Count</h3>
+          <br><br>
+          <a class="btn btn-block btn-large btn-primary" ng-click="signIn()">Sign in with Facebook</a>
         </div>
     </div>
 </div>
 
 <script>
-  var myCounter = new flipCounter('flip-counter', {value:"00000", pace:600, auto:false});
+  var myCounter = new flipCounter('flip-counter', {value:00000, pace:600, auto:false});
 </script>
 
