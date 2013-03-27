@@ -9,7 +9,6 @@ trankeeloApp.factory('AuthService', function() {
 	var AuthService = function() {
 		authClient = new FirebaseAuthClient(trankeeloRef, function(error, user) {
 			if (!error && user) {
-				console.log(user);
 				var currentUserRef = new Firebase(USERS_URL + '/' + user.id);
 				currentUserRef.once('value', function(data) {
 					if(!data.val()){
