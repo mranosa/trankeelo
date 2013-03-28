@@ -163,6 +163,9 @@ module.exports = function( grunt ) {
       optimize: 'none',
       baseUrl: './scripts',
       wrap: true
+    },
+    server:{
+      port:3502
     }
   });
 
